@@ -1,7 +1,17 @@
 window.onload = function() {
 
-console.log('Hello World');
+
 var animals = ["Cat", "Dog", "Fish", "Flamingo"];
+
+
+
+$("#add-button").on("click", function(event) {
+  event.preventDefault();
+  var movie = $("#button-input").val().trim();
+  animals.push(movie);
+  genBtns();
+});
+
 
 
 function genBtns() { // clear div
