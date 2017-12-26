@@ -18,15 +18,19 @@ function genBtns() { // clear div
 
 
 
-
 function ajaxRequest() {
-  console.log("HELLO");
-// In this case, the "this" keyword refers to the button that was clicked
-var animal = $(this).attr("data-name");
 
-// Constructing a URL to search Giphy for the name of the person who said the quote
-var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-  animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+console.log("HELLO");
+
+var animal = $(this).attr("data-name");
+var limit = 1;
+var apikey = 'dc6zaTOxFJmzC'
+
+var queryURL = "https://api.giphy.com/v1/gifs/search"
+  + "?q=" + animal 
+  + "&limit=" + limit
+  + "&api_key=" + apikey;
+
 
 // Performing our AJAX GET request
 $.ajax({
@@ -52,16 +56,18 @@ $.ajax({
         // Creating a paragraph tag with the result item's rating
         var p = $("<p>").text("Rating: " + rating);
 
-        // Creating an image tag
-        var personImage = $("<img>");
 
-        // Giving the image tag an src attribute of a proprty pulled off the
-        // result item
-        personImage.attr("src", results[i].images.fixed_height.url);
 
-        // Appending the paragraph and personImage we created to the "gifDiv" div we created
+        var animalGif = $("<img>");
+        animalGif.attr({
+          'data-state': 'still',
+          src: results[i].images.fixed_height_still.url,
+          'data-still': results[i].images.fixed_height_still.url,
+          'data-animate': results[i].images.fixed_height.url
+        }).click(animate);
+
         gifDiv.append(p);
-        gifDiv.append(personImage);
+        gifDiv.append(animalGif);
 
         // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
         $("#gifs-appear-here").prepend(gifDiv);
@@ -71,7 +77,9 @@ $.ajax({
 };
 
 
-$(".gif").on("click", function() {
+// $(".gif").on("click", function() {
+
+function animate() {
   var state = $(this).attr("data-state");
   if (state === "still") {
     $(this).attr("src", $(this).attr("data-animate"));
@@ -80,7 +88,9 @@ $(".gif").on("click", function() {
     $(this).attr("src", $(this).attr("data-still"));
     $(this).attr("data-state", "still");
   }
-});
+}
+
+// });
 
 
 
