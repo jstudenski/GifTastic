@@ -10,22 +10,21 @@
 </head>
 <body>
 
-<!-- <div>
-  <h1>Gif Tastic</h1>
-</div> -->
+
+<div class="btn-row">
+  <form id="button-form" class="left-arrow">
+<!-- <label for="button-input">Add an animal: </label> -->
+    <input type="text" id="button-input">
+    <input id="add" type="submit" value="ADD">
+  </form>
+
+  <div id="buttons"></div>
+
+</div>
 
 
-<form id="button-form">
-  <label for="button-input">New animal: </label>
-  <input type="text" id="button-input">
-  <input id="add-button" type="submit" value="Add">
-</form>
 
-<div id="buttons"></div>
-
-<div id="gifs-appear-here"></div>
-
-
+  <div id="gifs-appear-here"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
   <script src="assets/javascript/app.js"></script>

@@ -5,11 +5,14 @@ var animals = ["Cat", "Dog", "Fish", "Flamingo"];
 
 
 
-$("#add-button").on("click", function(event) {
-  event.preventDefault();
-  var movie = $("#button-input").val().trim();
-  animals.push(movie);
-  genBtns();
+$("#add").on("click", function(event) {
+  event.preventDefault(); // stop page refresh
+  var newAnimal = $("#button-input").val().trim();
+  if (newAnimal !== '') { // if input is not empty
+    animals.push(newAnimal);
+    genBtns(); // re-generate buttons
+    $("#button-input").val(''); // clear input
+  }
 });
 
 
