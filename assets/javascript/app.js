@@ -5,13 +5,13 @@ var animals = ["Cat", "Dog", "Fish", "Flamingo"];
 
 
 
-$("#add").on("click", function(event) {
+$("#add-animal").on("click", function(event) {
   event.preventDefault(); // stop page refresh
-  var newAnimal = $("#button-input").val().trim();
+  var newAnimal = $("#btn-input").val().trim();
   if (newAnimal !== '') { // if input is not empty
     animals.push(newAnimal);
     genBtns(); // re-generate buttons
-    $("#button-input").val(''); // clear input
+    $("#btn-input").val(''); // clear input
   }
 });
 
@@ -23,7 +23,7 @@ function removeButton() {
 
 
 function genBtns() { // clear div
-  $("#buttons").empty();
+  $("#btns").empty();
   for (var i = 0; i < animals.length; i++) {
     var btn = $("<button>");
     btn.addClass("animal");
@@ -31,7 +31,7 @@ function genBtns() { // clear div
     btn.text(animals[i]);
     btn.click(ajaxRequest);
     // btn.append('<div class="remove">X</div>'); // .click(removeButton);
-    $("#buttons").append(btn);
+    $("#btns").append(btn);
 
   }
 
@@ -61,7 +61,7 @@ function ajaxRequest() {
   }).done(function(response) {
 
     var results = response.data;
-    $("#gifs-appear-here").empty();
+    $("#gif-zoo").empty();
 
     for (var i = 0; i < results.length; i++) {
 
@@ -86,8 +86,7 @@ function ajaxRequest() {
         gifDiv.append(p);
 
 
-        // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-        $("#gifs-appear-here").prepend(gifDiv);
+        $("#gif-zoo").prepend(gifDiv);
       }
     }
   });
