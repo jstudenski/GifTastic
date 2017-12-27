@@ -13,16 +13,27 @@ body {
 }
 
 #buttons {
-  background-color: salmon;
+  background-color: #d73a49;
 }
 
+/* animal button */
 .animal {
   margin: 5px;
+  color: #555;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: .5em .75em;
+  border: 2px solid #333;
+}
+
+.animal:hover {
+  background-color: #333;
+  color: rgba(255, 255, 255, .75);
 }
 
 .active {
-  border: 2px solid green;
-  border-radius: 3px;
+  background-color: #333;
+  color: rgba(255, 255, 255, .75);
 }
 
 #gifs-appear-here {
@@ -48,12 +59,54 @@ body {
 
 .item [data-state="animate"]{
   border: 2px solid blue;
-/*  background-color: red;*/
 }
 
 #button-form {
-  background-color: orange;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: rgba(255,255,255,0.75);
+  background-color: #24292e;
 }
+
+.remove{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
+#button-input {
+  background-color: #3f4448;
+  color: rgba(255,255,255,0.75);
+  padding: 6px 8px;
+  box-sizing: border-box;
+  height: 30px;
+  width: 200px;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+#button-input:focus {
+  background-color: #515558;
+}
+/*.form-control, .form-select {
+
+    padding: 6px 8px;
+
+    line-height: 20px;
+    color: #24292e;
+    vertical-align: middle;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+}*/
+
+
 
 
 

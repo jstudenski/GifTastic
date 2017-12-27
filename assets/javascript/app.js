@@ -13,6 +13,11 @@ $("#add-button").on("click", function(event) {
 });
 
 
+function removeButton() {
+  console.log("REMOVE ME!");
+  console.log(this);
+}
+
 
 function genBtns() { // clear div
   $("#buttons").empty();
@@ -22,8 +27,12 @@ function genBtns() { // clear div
     btn.attr("data-name", animals[i]);
     btn.text(animals[i]);
     btn.click(ajaxRequest);
+    // btn.append('<div class="remove">X</div>'); // .click(removeButton);
     $("#buttons").append(btn);
+
   }
+
+  $(".remove").click(removeButton);
 }
 
 
@@ -43,8 +52,7 @@ function ajaxRequest() {
     + "&api_key=" + apikey;
 
 
-// Performing our AJAX GET request
-$.ajax({
+  $.ajax({
     url: queryURL,
     method: "GET"
   }).done(function(response) {
@@ -60,7 +68,7 @@ $.ajax({
         var rating = results[i].rating;
         var p = $("<p>").text(rating);
 
-        console.log(results[i])
+        // console.log(results[i])
 
         var animalGif = $("<img>");
         animalGif.attr({
@@ -83,7 +91,10 @@ $.ajax({
 };
 
 
-// $(".gif").on("click", function() {
+$('.testButton').click(function() {
+  //console.log("hello");
+  console.log($(this).attr("data-attribute"));
+});
 
 function animate() {
   var state = $(this).attr("data-state");
@@ -95,9 +106,6 @@ function animate() {
     $(this).attr("data-state", "still");
   }
 }
-
-// });
-
 
 
 
