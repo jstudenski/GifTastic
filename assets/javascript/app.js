@@ -23,6 +23,9 @@ function removeButton() {
 
 
 function genBtns() { // clear div
+  console.log(animals);
+
+  
   $("#btns").empty();
   for (var i = 0; i < animals.length; i++) {
     var btn = $("<button>");
@@ -43,6 +46,7 @@ function genBtns() { // clear div
 function ajaxRequest() {
   $('.animal').removeClass("active");
   $(this).addClass("active");
+
 
 
   var animal = $(this).attr("data-name");
