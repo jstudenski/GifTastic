@@ -125,9 +125,9 @@ genBtns();
 var numberofGifs = 10;
 
 var rangeSlider = function(){
-  var slider = $('.range-slider'),
-      range = $('.range-slider-range'),
-      value = $('.range-slider-value');
+  var slider = $('.slider'),
+      range = $('.slider-range'),
+      value = $('.slider-value');
     
   slider.each(function(){
 
