@@ -25,7 +25,6 @@ function removeButton() {
 function genBtns() { // clear div
   console.log(animals);
 
-  
   $("#btns").empty();
   for (var i = 0; i < animals.length; i++) {
     var btn = $("<button>");
@@ -44,13 +43,13 @@ function genBtns() { // clear div
 
 
 function ajaxRequest() {
+
   $('.animal').removeClass("active");
   $(this).addClass("active");
 
 
-
   var animal = $(this).attr("data-name");
-  var limit = 12;
+  var limit = numberofGifs;
   var apikey = 'dc6zaTOxFJmzC'
 
   var queryURL = "https://api.giphy.com/v1/gifs/search"
@@ -118,6 +117,41 @@ function animate() {
 
 
 genBtns();
+
+
+
+
+
+var numberofGifs = 10;
+
+var rangeSlider = function(){
+  var slider = $('.range-slider'),
+      range = $('.range-slider-range'),
+      value = $('.range-slider-value');
+    
+  slider.each(function(){
+
+    value.each(function(){
+      var value = $(this).prev().attr('value');
+      $(this).html(value);
+
+    });
+
+    range.on('input', function(){
+      $(this).next(value).html(this.value);
+      numberofGifs = this.value;
+    });
+  });
+};
+
+rangeSlider();
+
+
+
+
+
+
+
 
 
 } // window.onload
