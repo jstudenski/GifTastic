@@ -48,18 +48,19 @@ label {
 }
 
 #add-animal {
-  background: #666;
-  font-size: 12px;
+  background: #515558;
+  font-size: 22px;
   color: #fff;
   height: 30px;
-  width: 45px;
+  width: 30px;
+  line-height: 11px;
   border: none;
   border-radius: 3px;
   vertical-align: top;
 }
 
 #add-animal:hover {
-  background: #525252;
+  background: #d73a49;
 }
 
 
