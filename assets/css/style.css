@@ -184,17 +184,20 @@ label {
 
 
 
+
+
 .slider {
-    width: 200px;  Width of the outside container 
+    width: 300px;/*  Width of the outside container*/
 }
 
 /* The slider itself */
 .slider-range {
     -webkit-appearance: none;  /* Override default CSS styles */
+    border-radius: 3px;
     appearance: none;
     width: 100%; /* Full-width */
     height: 25px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
+    background: #3e4448; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -214,6 +217,7 @@ label {
     height: 25px; /* Slider handle height */
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    border-radius: 3px;
 }
 
 .slider-range::-moz-range-thumb {
@@ -221,6 +225,7 @@ label {
     height: 25px; /* Slider handle height */
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    border-radius: 3px;
 }
 
 

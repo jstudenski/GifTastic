@@ -1,7 +1,7 @@
 window.onload = function() {
 
 
-var animals = ["Cat", "Dog", "Fish", "Flamingo"];
+var animals = ["Cat", "Dog", "Fish", "Flamingo", "Fish", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo"];
 
 
 
