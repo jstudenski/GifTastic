@@ -5,9 +5,18 @@ body {
 outline: 0;
 }
 
-.btn-row {
+.row {
   height: 100px;
 }
+
+.footer {
+  background-color: #e82243;
+  position: absolute;
+  bottom: 0;
+  height: 6px;
+  width: 100%;
+}
+
 
 #btn-form, #btns {
   height: 100%;
