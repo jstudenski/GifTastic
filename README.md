@@ -1,5 +1,9 @@
 # GifTastic! 
 
+
+sass --watch assets/css/style.scss:assets/css/style.css
+
+
 > ### TO DO:
 > - keep active button state when new button is added
 > - set other ajax paramaters such as number of gifs

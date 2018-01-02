@@ -1,160 +1,114 @@
 body {
-  background-color: #cbd2d6;  
-}
+  background-color: #cbd2d6; }
+
 :focus {
-outline: 0;
-}
+  outline: 0; }
 
 .row {
-  height: 100px;
-}
+  height: 100px; }
 
 .footer {
-  background-color: #e82243;
+  background-color: #d73a49;
   position: absolute;
   bottom: 0;
   height: 6px;
-  width: 100%;
-}
-
+  width: 100%; }
 
 #btn-form, #btns {
   height: 100%;
   box-sizing: border-box;
   float: left;
-  position: relative;
-}
+  position: relative; }
 
 #btn-form {
   width: 269px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   padding: 16px;
-  background-color: #24292e;
-}
+  background-color: #24292e; }
+  #btn-form label {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    word-spacing: 1px; }
 
 #btn-input {
   background-color: #3f4448;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   padding: 6px 8px;
   box-sizing: border-box;
   height: 30px;
   width: 150px;
   font-size: 14px;
   border: none;
-  border-radius: 3px;
-}
-
-label {
-  font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
-/*  text-transform: uppercase;*/
-  word-spacing: 1px;
-}
-
-
-#btn-input:focus {
-  background-color: #515558;
-}
+  border-radius: 3px; }
+  #btn-input:focus {
+    background-color: #515558; }
 
 #add-animal {
   background: #515558;
   font-size: 22px;
-  color: #fff;
+  color: #ffffff;
   height: 30px;
   width: 30px;
   line-height: 11px;
   border: none;
   border-radius: 3px;
-  vertical-align: top;
-}
-
-#add-animal:hover {
-  background: #d73a49;
-}
-
-
-
+  vertical-align: top; }
+  #add-animal:hover {
+    background: #d73a49; }
 
 #btns {
   width: 600px;
   padding: 16px;
-  background-color: #d73a49; 
-}
+  background-color: #d73a49; }
 
 /* all arrows */
 #btn-form:after, #btns:after {
   content: '';
-  display: block;  
+  display: block;
   position: absolute;
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  z-index: 1;
-}
+  z-index: 1; }
 
 /* right arrow */
 #btn-form:after {
   left: 100%;
   top: 50%;
   margin-top: -10px;
-  border-left: 10px solid #24292e;
-}
+  border-left: 10px solid #24292e; }
 
 /* down arrow */
 #btns:after {
   left: 50%;
   top: 100%;
   margin-left: -10px;
-  border-top: 10px solid #d73a49;
-}
-
-
-
-
-
-
-
-
-
+  border-top: 10px solid #d73a49; }
 
 .item p {
-  background-color: white;
+  background-color: #ffffff;
   width: 30px;
   height: 23px;
   border: 1px solid black;
   border-radius: 8px;
   box-sizing: border-box;
-  text-align: center;
-}
-
-
-
-
-
+  text-align: center; }
 
 .animal {
   margin: 5px;
-  color: #555;
+  color: #555555;
   text-transform: uppercase;
   display: inline-block;
   padding: .5em .75em;
   border-radius: 4px;
-  border: 1px solid #333;
-}
-
-.animal:hover {
-  background-color: #333;
-  color: rgba(255, 255, 255, .75);
-}
-
-
-
-
+  border: 1px solid #333333; }
+  .animal:hover {
+    background-color: #333333;
+    color: rgba(255, 255, 255, 0.75); }
 
 .active {
-  background-color: #333;
-  color: rgba(255, 255, 255, .75);
-}
+  background-color: #333333;
+  color: rgba(255, 255, 255, 0.75); }
 
 #gif-zoo {
   display: flex;
@@ -163,79 +117,74 @@ label {
   background-color: #9e9e9e;
   max-height: 800px;
   margin-left: -8px;
-  padding-top: 20px;
-}
+  padding-top: 20px; }
 
 .item {
   width: 220px;
   background-color: #ffffff;
   border-radius: 5px;
   overflow: hidden;
-  margin: 0 8px 8px 0;
-}
+  margin: 0 8px 8px 0; }
 
 .item:hover {
-  opacity: .5;
-}
+  opacity: .5; }
 
-.item [data-state="animate"]{
-  border: 2px solid blue;
-}
-
-
-
-.remove{
-  width: 20px;
-  height: 20px;
-  background-color: red;
-}
-
-
-
-
-
+.item [data-state="animate"] {
+  border: 2px solid #d73a49; }
 
 .slider {
-    width: 300px;/*  Width of the outside container*/
-}
+  width: 300px;
+  /*  Width of the outside container*/ }
 
 /* The slider itself */
 .slider-range {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    border-radius: 3px;
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
-    background: #3e4448; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-}
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  border-radius: 3px;
+  appearance: none;
+  width: 100%;
+  /* Full-width */
+  height: 25px;
+  /* Specified height */
+  background: #3e4448;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
+  transition: opacity .2s; }
 
 /* Mouse-over effects */
 .slider-range:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-}
+  opacity: 1;
+  /* Fully shown on mouse-over */ }
 
-/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */ 
+/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */
 .slider-range::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #24292e; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 3px;
-}
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: #24292e;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+  border-radius: 3px; }
 
 .slider-range::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #24292e; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 3px;
-}
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: #24292e;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+  border-radius: 3px; }
 
-
-
+/*# sourceMappingURL=style.css.map */
