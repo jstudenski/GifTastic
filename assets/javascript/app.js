@@ -1,11 +1,9 @@
 window.onload = function() {
 
-
 var animals = ["Cat", "Dog", "Fish", "Flamingo", "Fish", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo"];
 
 
-
-$("#add-animal").on("click", function(event) {
+$("#add-button").on("click", function(event) {
   event.preventDefault(); // stop page refresh
   var newAnimal = $("#btn-input").val().trim();
   if (newAnimal !== '') { // if input is not empty
@@ -64,7 +62,7 @@ function ajaxRequest() {
   }).done(function(response) {
 
     var results = response.data;
-    $("#gif-zoo").empty();
+    $("#gif-area").empty();
 
     for (var i = 0; i < results.length; i++) {
 
@@ -89,7 +87,7 @@ function ajaxRequest() {
         gifDiv.append(p);
 
 
-        $("#gif-zoo").prepend(gifDiv);
+        $("#gif-area").prepend(gifDiv);
       }
     }
   });

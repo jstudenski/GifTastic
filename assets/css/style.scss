@@ -8,7 +8,7 @@ $steel: #515558;
 $btn-input: #3f4448;
 $slider-bg: #3e4448;
 $dark: #333333;
-$darkblue: #24292e;
+$darkblue: #666; // #24292e
 
 
 body {
@@ -23,7 +23,7 @@ body {
   height: 100px;
 }
 
-.footer {
+footer {
   background-color: $red;
   position: absolute;
   bottom: 0;
@@ -51,28 +51,13 @@ body {
   }
 }
 
-#btn-input {
-  background-color: $btn-input;
-  color: $formbg;
-  padding: 6px 8px;
-  box-sizing: border-box;
-  height: 30px;
-  width: 150px;
-  font-size: 14px;
-  border: none;
-  border-radius: 3px;
-  &:focus {
-    background-color: $steel;
-  }
-}
 
-
-#add-animal {
+#add-button {
   background: $steel;
   font-size: 22px;
   color: $white;
-  height: 30px;
-  width: 30px;
+  height: 28px;
+  width: 28px;
   line-height: 11px;
   border: none;
   border-radius: 3px;
@@ -118,14 +103,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
 .item p {
   background-color: $white;
   width: 30px;
@@ -140,20 +117,37 @@ body {
 
 
 
-
-.animal {
-  margin: 5px;
+@mixin button {
+  border-radius: 4px;
+  background-color: $white;
   color: $gray;
   text-transform: uppercase;
-  display: inline-block;
-  padding: .5em .75em;
-  border-radius: 4px;
   border: 1px solid $dark;
+  height: 28px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  font: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.animal {
+  @include button;
+  margin: 5px;  
   &:hover {
     background-color: $dark;
     color: $formbg;
   }
 }
+
+#btn-input {
+  @include button;
+  &:focus {
+    // background-color: $steel;
+  }
+}
+
+
+
 
 
 .active {
@@ -161,7 +155,7 @@ body {
   color: $formbg;
 }
 
-#gif-zoo {
+#gif-area {
   display: flex;
   flex-flow: column wrap;
   width: 700px;
