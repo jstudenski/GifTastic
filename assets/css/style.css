@@ -4,6 +4,33 @@ body {
 :focus {
   outline: 0; }
 
+.sidebar {
+  width: 256px;
+  height: 100%;
+  background-color: #333333;
+  position: fixed;
+  z-index: 1; }
+
+.section1 {
+  height: 100px;
+  width: 100%;
+  background-color: yellow; }
+
+.section2 {
+  height: 80px;
+  width: 100%;
+  background-color: lime; }
+
+.section3 {
+  height: 80px;
+  width: 100%;
+  background-color: tomato; }
+
+.section4 {
+  height: 100%;
+  width: 100%;
+  background-color: lightblue; }
+
 .row {
   height: 100px; }
 
@@ -20,16 +47,6 @@ footer {
   float: left;
   position: relative; }
 
-#btn-form {
-  width: 269px;
-  color: rgba(255, 255, 255, 0.75);
-  padding: 16px;
-  background-color: #666; }
-  #btn-form label {
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    word-spacing: 1px; }
-
 #add-button {
   background: #515558;
   font-size: 22px;
@@ -44,34 +61,11 @@ footer {
     background: #d73a49; }
 
 #btns {
-  width: 600px;
   padding: 16px;
   background-color: #d73a49; }
 
 /* all arrows */
-#btn-form:after, #btns:after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  z-index: 1; }
-
-/* right arrow */
-#btn-form:after {
-  left: 100%;
-  top: 50%;
-  margin-top: -10px;
-  border-left: 10px solid #666; }
-
 /* down arrow */
-#btns:after {
-  left: 50%;
-  top: 100%;
-  margin-left: -10px;
-  border-top: 10px solid #d73a49; }
-
 .item p {
   background-color: #ffffff;
   width: 30px;
@@ -107,7 +101,8 @@ footer {
   padding: 8px 10px;
   box-sizing: border-box;
   font: 11px;
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+  width: 150px; }
 
 .active {
   background-color: #333333;
@@ -145,8 +140,6 @@ footer {
   /* Override default CSS styles */
   border-radius: 3px;
   appearance: none;
-  width: 100%;
-  /* Full-width */
   height: 25px;
   /* Specified height */
   background: #3e4448;
