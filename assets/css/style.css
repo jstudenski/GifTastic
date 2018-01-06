@@ -14,17 +14,20 @@ body {
 .section1 {
   height: 100px;
   width: 100%;
-  background-color: yellow; }
+  background-color: #191f20; }
 
 .section2 {
   height: 80px;
   width: 100%;
-  background-color: lime; }
+  background-color: #2e3334;
+  border-bottom: 1px solid #182021;
+  box-sizing: border-box; }
 
 .section3 {
   height: 80px;
   width: 100%;
-  background-color: tomato; }
+  background-color: #2e3334;
+  border-bottom: 1px solid #182021; }
 
 .section4 {
   height: 100%;
