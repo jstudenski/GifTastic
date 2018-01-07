@@ -7,6 +7,7 @@ label {
   font-size: 14px; }
 
 header {
+  z-index: 1;
   position: fixed;
   top: 0;
   width: 100%;
@@ -42,6 +43,7 @@ header {
 .sidebar1 {
   height: 80px;
   width: 100%;
+  padding-top: 14px;
   background-color: #282828;
   border-bottom: 1px solid #1b1b1b;
   box-sizing: border-box;
@@ -52,6 +54,7 @@ header {
 .sidebar2 {
   height: 80px;
   width: 100%;
+  padding-top: 14px;
   box-sizing: border-box;
   background-color: #353535;
   border-bottom: 1px solid #1b1b1b; }
@@ -74,21 +77,19 @@ header {
 .row {
   height: 100px; }
 
-footer {
+#btns {
+  padding: 16px;
   background-color: #d73a49;
-  position: absolute;
-  bottom: 0;
-  height: 6px;
-  width: 100%; }
-
-#btn-form, #btns {
   height: 100%;
-  box-sizing: border-box;
-  float: left;
-  position: relative; }
+  overflow-y: auto;
+  min-height: 100%; }
 
 #btn-form {
-  margin: 14px auto; }
+  margin: 0px auto; }
+
+.slider {
+  width: 182px;
+  margin: 0px auto; }
 
 #plus-button {
   background: #484848;
@@ -102,10 +103,6 @@ footer {
   vertical-align: top; }
   #plus-button:hover {
     background: #d73a49; }
-
-#btns {
-  padding: 16px;
-  background-color: #d73a49; }
 
 /* all arrows */
 /* down arrow */
@@ -171,12 +168,10 @@ footer {
 .item [data-state="animate"] {
   border: 2px solid #d73a49; }
 
-.slider {
-  width: 300px;
-  /*  Width of the outside container*/ }
-
 /* The slider itself */
 .slider-range {
+  width: 150px;
+  margin: 0;
   -webkit-appearance: none;
   /* Override default CSS styles */
   border-radius: 3px;
@@ -187,11 +182,6 @@ footer {
   /* Grey background */
   outline: none;
   /* Remove outline */
-  opacity: 0.7;
-  /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s;
-  /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
   border: 1px solid #1d1d1d;
   box-sizing: border-box; }
 
@@ -228,15 +218,14 @@ footer {
 
 .slider-val {
   color: #ffffff;
-  background-color: #212121;
+  background-color: #282828;
   height: 28px;
   width: 28px;
-  float: left;
+  float: right;
   padding-top: 6px;
   box-sizing: border-box;
   font-size: 15px;
   border-radius: 3px;
-  text-align: center;
-  margin-right: 3px; }
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

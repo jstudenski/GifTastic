@@ -40,6 +40,7 @@ label {
 
 
 header {
+  z-index: 1;
   position: fixed;
   top: 0;
   width: 100%;
@@ -50,7 +51,6 @@ header {
   background-color: $dark;
   // Text Properties
   color: $light;
-
   text-transform: uppercase;
   font-size: 36px;
 }
@@ -82,6 +82,7 @@ header {
 .sidebar1 {
   height: 80px;
   width: 100%;
+  padding-top: 14px;
   background-color: $dark;
   border-bottom: 1px solid $night;
   box-sizing: border-box;
@@ -93,6 +94,7 @@ header {
 .sidebar2 {
   height: 80px;
   width: 100%;
+  padding-top: 14px;
   box-sizing: border-box;
   background-color: #353535;
   border-bottom: 1px solid $night;
@@ -121,28 +123,24 @@ header {
   height: 100px;
 }
 
-footer {
+
+#btns {
+  padding: 16px;
   background-color: $red;
-  position: absolute;
-  bottom: 0;
-  height: 6px;
-  width: 100%;
+  height: 100%; 
+  overflow-y: auto;
+  min-height: 100%;
 }
 
-
-#btn-form, #btns {
-  height: 100%;
-  box-sizing: border-box;
-  float: left;
-  position: relative;
-}
 
 #btn-form {
-  // border: 1px solid red;
-  margin: 14px auto;
-
+  margin: 0px auto;
 }
 
+.slider {
+  width: 182px;
+  margin: 0px auto;
+}
 
 
 #plus-button {
@@ -160,10 +158,7 @@ footer {
   }
 }
 
-#btns {
-  padding: 16px;
-  background-color: $red; 
-}
+
 
 /* all arrows */
 // #btn-form:after, #btns:after {
@@ -282,21 +277,20 @@ footer {
 // }
 
 
-.slider {
-  width: 300px;/*  Width of the outside container*/
-}
 
 /* The slider itself */
 .slider-range {
+    width: 150px;
+    margin: 0;
     -webkit-appearance: none;  /* Override default CSS styles */
     border-radius: 3px;
     appearance: none;
     height: 28px; /* Specified height */
     background: #696969; /* Grey background */
     outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
+    // opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    //-webkit-transition: .2s;
+    // transition: opacity .2s;
     border: 1px solid #1d1d1d;
     box-sizing: border-box;
 }
@@ -331,17 +325,17 @@ footer {
 
 .slider-val {
   color: #ffffff;
-  background-color: #212121;
+  background-color: #282828;
   height: 28px;
   width: 28px;
-  float: left;
+  float: right;
   padding-top: 6px;
   box-sizing: border-box;
   font-size: 15px;
   border-radius: 3px;
   text-align: center;
   // font-weight: bold;
-  margin-right: 3px;
+  // margin-right: 3px;
 }
 
 

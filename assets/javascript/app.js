@@ -3,15 +3,35 @@ window.onload = function() {
 var animals = ["Cat", "Dog", "Fish", "Flamingo", "Fish", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo"];
 
 
+// generate initial buttons
+$.each(animals, function( index, value ) {
+  addBtn(value);
+});
+
+
+
 $("#plus-button").on("click", function(event) {
   event.preventDefault(); // stop page refresh
   var newAnimal = $("#btn-input").val().trim().toLowerCase();
   if (newAnimal !== '') { // if input is not empty
     animals.push(newAnimal);
-    genBtns(); // re-generate buttons
     $("#btn-input").val(''); // clear input
+    addBtn(newAnimal);
   }
 });
+
+function addBtn(name){
+  var btn = $("<button>");
+  btn.addClass("item-btn");
+  btn.attr("data-name", name);
+  btn.text(name);
+  btn.click(ajaxRequest);
+  // btn.append('<div class="remove">X</div>'); // .click(removeButton);
+  $("#btns").append(btn);
+}
+
+
+
 
 
 function removeButton() {
@@ -20,23 +40,24 @@ function removeButton() {
 }
 
 
-function genBtns() { // clear div
-  console.log(animals);
 
-  $("#btns").empty();
-  for (var i = 0; i < animals.length; i++) {
-    var btn = $("<button>");
-    btn.addClass("item-btn");
-    btn.attr("data-name", animals[i]);
-    btn.text(animals[i]);
-    btn.click(ajaxRequest);
-    // btn.append('<div class="remove">X</div>'); // .click(removeButton);
-    $("#btns").append(btn);
+// function genBtns() { // clear div
+//   console.log(animals);
 
-  }
+//   $("#btns").empty();
+//   for (var i = 0; i < animals.length; i++) {
+//     var btn = $("<button>");
+//     btn.addClass("item-btn");
+//     btn.attr("data-name", animals[i]);
+//     btn.text(animals[i]);
+//     btn.click(ajaxRequest);
+//     // btn.append('<div class="remove">X</div>'); // .click(removeButton);
+//     $("#btns").append(btn);
 
-  $(".remove").click(removeButton);
-}
+//   }
+
+//   $(".remove").click(removeButton);
+// }
 
 
 
