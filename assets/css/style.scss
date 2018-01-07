@@ -1,81 +1,113 @@
-$red: #d73a49;
-$white: #ffffff;
-$light: #cbd2d6;
+
+
+
+
 $formbg: rgba(255,255,255,0.75);
 $gifbg: #9e9e9e;
+// #eeeeee
+// #dddddd
+// #cdcdcd
+
 $gray: #555555;
 $steel: #515558;
 $btn-input: #3f4448;
 $slider-bg: #3e4448;
-$dark: #333333;
+
 $darkblue: #666; // #24292e
 
+// new colors
+$red: #d73a49;
+$night: #1b1b1b;
+$dark: #282828;
+
+$white: #ffffff;
+
+$light: #ababab;
+
+
+$sidebar-width: 256px;
+$header-height: 80px;
 
 body {
   background-color: $light;
+}
+
+header {
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  padding-left: 256px;
+  box-sizing: border-box;
+  background-color: $dark;
+  // border-bottom: 2px solid red;
+}
+
+
+
+#content {
+  width: 750px;
+  height: 100%;
+  position: absolute;
+  left: $sidebar-width;
+  top: $header-height;
+  background-color: salmon;
 }
 
 :focus {
   outline: 0;
 }
 
+
+
 .sidebar {
-  width: 256px;
+  width: $sidebar-width;
   height: 100%;
-  background-color: $dark;
+  // background-color: $dark;
   position: fixed;
   z-index: 1;
 }
 
 
-$test-color: #363636;
-
-$dark-color: #1b1b1b;
-
-$first-row: 80px;
-
-.section1 {
-  height: $first-row;
-  width: 100%;
-  background-color: $dark-color;
+.logo {
+    padding-top: 26px;
+    font-size: 45px;
+    text-align: center;
+    box-sizing: border-box;
+    height: $header-height;
+    width: 100%;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    font-family: 'Sedgwick Ave Display', cursive;
 }
-.section2 {
+
+.sidebar1 {
   height: 80px;
   width: 100%;
-  background-color: $test-color;
-  border-bottom: 1px solid $dark-color;
+  background-color: $dark;
+  border-bottom: 1px solid $night;
   box-sizing: border-box;
   &:hover {
-    background-color: salmon;
+    background-color: #424242;
   }
 }
-.section3 {
+.sidebar2 {
   height: 80px;
   width: 100%;
   box-sizing: border-box;
-  background-color: $test-color;
-  border-bottom: 1px solid $dark-color;
+  background-color: #353535;
+  border-bottom: 1px solid $night;
   &:hover {
-    background-color: salmon;
+    background-color: #424242;
   }
 }
-.section4 {
+.sidebar3 {
   height: 100%;
   width: 100%;
   background-color: lightblue;
 }
 
-.sticky {
-  color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: $first-row;
-  padding-left: 256px;
-  box-sizing: border-box;
-  background-color: $test-color;
-  border-bottom: 2px solid #182021;
-}
 
 
 
@@ -191,14 +223,20 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.animal {
+.item-btn {
   @include button;
   margin: 5px;  
   &:hover {
     background-color: $dark;
-    color: $formbg;
+    color: $white;
   }
 }
+.active {
+  background-color: $dark;
+  color: $white;
+}
+
+
 
 #btn-input {
   @include button;
@@ -212,10 +250,7 @@ footer {
 
 
 
-.active {
-  background-color: $dark;
-  color: $formbg;
-}
+
 
 #gif-area {
   display: flex;
@@ -223,8 +258,6 @@ footer {
   width: 700px;
   background-color: $gifbg;
   max-height: 800px;
-  margin-left: -8px;
-  padding-top: 20px;
 }
 
 .item {

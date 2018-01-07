@@ -26,7 +26,7 @@ function genBtns() { // clear div
   $("#btns").empty();
   for (var i = 0; i < animals.length; i++) {
     var btn = $("<button>");
-    btn.addClass("animal");
+    btn.addClass("item-btn");
     btn.attr("data-name", animals[i]);
     btn.text(animals[i]);
     btn.click(ajaxRequest);
@@ -42,7 +42,7 @@ function genBtns() { // clear div
 
 function ajaxRequest() {
 
-  $('.animal').removeClass("active");
+  $('.item-btn').removeClass("active");
   $(this).addClass("active");
 
 

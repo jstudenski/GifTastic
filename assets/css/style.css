@@ -1,45 +1,7 @@
 body {
-  background-color: #cbd2d6; }
+  background-color: #ababab; }
 
-:focus {
-  outline: 0; }
-
-.sidebar {
-  width: 256px;
-  height: 100%;
-  background-color: #333333;
-  position: fixed;
-  z-index: 1; }
-
-.section1 {
-  height: 80px;
-  width: 100%;
-  background-color: #1b1b1b; }
-
-.section2 {
-  height: 80px;
-  width: 100%;
-  background-color: #363636;
-  border-bottom: 1px solid #1b1b1b;
-  box-sizing: border-box; }
-  .section2:hover {
-    background-color: salmon; }
-
-.section3 {
-  height: 80px;
-  width: 100%;
-  box-sizing: border-box;
-  background-color: #363636;
-  border-bottom: 1px solid #1b1b1b; }
-  .section3:hover {
-    background-color: salmon; }
-
-.section4 {
-  height: 100%;
-  width: 100%;
-  background-color: lightblue; }
-
-.sticky {
+header {
   color: white;
   position: fixed;
   top: 0;
@@ -47,8 +9,58 @@ body {
   height: 80px;
   padding-left: 256px;
   box-sizing: border-box;
-  background-color: #363636;
-  border-bottom: 2px solid #182021; }
+  background-color: #282828; }
+
+#content {
+  width: 750px;
+  height: 100%;
+  position: absolute;
+  left: 256px;
+  top: 80px;
+  background-color: salmon; }
+
+:focus {
+  outline: 0; }
+
+.sidebar {
+  width: 256px;
+  height: 100%;
+  position: fixed;
+  z-index: 1; }
+
+.logo {
+  padding-top: 26px;
+  font-size: 45px;
+  text-align: center;
+  box-sizing: border-box;
+  height: 80px;
+  width: 100%;
+  background-color: #1b1b1b;
+  color: #ffffff;
+  font-family: 'Sedgwick Ave Display', cursive; }
+
+.sidebar1 {
+  height: 80px;
+  width: 100%;
+  background-color: #282828;
+  border-bottom: 1px solid #1b1b1b;
+  box-sizing: border-box; }
+  .sidebar1:hover {
+    background-color: #424242; }
+
+.sidebar2 {
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #353535;
+  border-bottom: 1px solid #1b1b1b; }
+  .sidebar2:hover {
+    background-color: #424242; }
+
+.sidebar3 {
+  height: 100%;
+  width: 100%;
+  background-color: lightblue; }
 
 .row {
   height: 100px; }
@@ -94,28 +106,32 @@ footer {
   box-sizing: border-box;
   text-align: center; }
 
-.animal {
+.item-btn {
   border-radius: 4px;
   background-color: #ffffff;
   color: #555555;
   text-transform: uppercase;
-  border: 1px solid #333333;
+  border: 1px solid #282828;
   height: 28px;
   padding: 8px 10px;
   box-sizing: border-box;
   font: 11px;
   font-family: Arial, Helvetica, sans-serif;
   margin: 5px; }
-  .animal:hover {
-    background-color: #333333;
-    color: rgba(255, 255, 255, 0.75); }
+  .item-btn:hover {
+    background-color: #282828;
+    color: #ffffff; }
+
+.active {
+  background-color: #282828;
+  color: #ffffff; }
 
 #btn-input {
   border-radius: 4px;
   background-color: #ffffff;
   color: #555555;
   text-transform: uppercase;
-  border: 1px solid #333333;
+  border: 1px solid #282828;
   height: 28px;
   padding: 8px 10px;
   box-sizing: border-box;
@@ -123,18 +139,12 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
   width: 150px; }
 
-.active {
-  background-color: #333333;
-  color: rgba(255, 255, 255, 0.75); }
-
 #gif-area {
   display: flex;
   flex-flow: column wrap;
   width: 700px;
   background-color: #9e9e9e;
-  max-height: 800px;
-  margin-left: -8px;
-  padding-top: 20px; }
+  max-height: 800px; }
 
 .item {
   width: 220px;
