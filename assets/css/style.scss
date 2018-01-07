@@ -30,56 +30,53 @@ $header-height: 80px;
 
 body {
   background-color: $light;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+label {
+  color: $light;
+  font-size: 14px;
+}
+
+
 header {
-  color: white;
   position: fixed;
   top: 0;
   width: 100%;
   height: $header-height;
-  padding-left: 256px;
+  padding-left: $sidebar-width + 25px;
+  padding-top: 25px;
   box-sizing: border-box;
   background-color: $dark;
-  // border-bottom: 2px solid red;
-}
+  // Text Properties
+  color: $light;
 
-
-
-#content {
-  width: 750px;
-  height: 100%;
-  position: absolute;
-  left: $sidebar-width;
-  top: $header-height;
-  background-color: salmon;
+  text-transform: uppercase;
+  font-size: 36px;
 }
 
 :focus {
   outline: 0;
 }
 
-
-
 .sidebar {
   width: $sidebar-width;
   height: 100%;
-  // background-color: $dark;
   position: fixed;
   z-index: 1;
 }
 
 
 .logo {
-    padding-top: 26px;
-    font-size: 45px;
-    text-align: center;
-    box-sizing: border-box;
-    height: $header-height;
-    width: 100%;
-    background-color: #1b1b1b;
-    color: #ffffff;
-    font-family: 'Sedgwick Ave Display', cursive;
+  padding-top: 26px;
+  font-size: 45px;
+  text-align: center;
+  box-sizing: border-box;
+  height: $header-height;
+  width: 100%;
+  background-color: #1b1b1b;
+  color: #ffffff;
+  font-family: 'Sedgwick Ave Display', cursive;
 }
 
 .sidebar1 {
@@ -88,8 +85,9 @@ header {
   background-color: $dark;
   border-bottom: 1px solid $night;
   box-sizing: border-box;
+  display: flex;
   &:hover {
-    background-color: #424242;
+    background-color: #2e2e2e;
   }
 }
 .sidebar2 {
@@ -99,7 +97,7 @@ header {
   background-color: #353535;
   border-bottom: 1px solid $night;
   &:hover {
-    background-color: #424242;
+    background-color: #3b3b3b;
   }
 }
 .sidebar3 {
@@ -108,7 +106,14 @@ header {
   background-color: lightblue;
 }
 
-
+#content {
+  width: 750px;
+  height: 100%;
+  position: absolute;
+  left: $sidebar-width;
+  top: $header-height;
+  background-color: salmon;
+}
 
 
 
@@ -132,21 +137,16 @@ footer {
   position: relative;
 }
 
-// #btn-form {
-//   width: 269px;
-//   color: $formbg;
-//   padding: 16px;
-//   background-color: $darkblue;
-//   label {
-//     font-size: 12px;
-//     font-family: Arial, Helvetica, sans-serif;
-//     word-spacing: 1px;
-//   }
-// }
+#btn-form {
+  // border: 1px solid red;
+  margin: 14px auto;
+
+}
 
 
-#add-button {
-  background: $steel;
+
+#plus-button {
+  background: #484848;
   font-size: 22px;
   color: $white;
   height: 28px;
@@ -160,10 +160,7 @@ footer {
   }
 }
 
-
-
 #btns {
-  // width: 600px;
   padding: 16px;
   background-color: $red; 
 }
@@ -285,8 +282,6 @@ footer {
 // }
 
 
-
-
 .slider {
   width: 300px;/*  Width of the outside container*/
 }
@@ -296,12 +291,14 @@ footer {
     -webkit-appearance: none;  /* Override default CSS styles */
     border-radius: 3px;
     appearance: none;
-    height: 25px; /* Specified height */
-    background: $slider-bg; /* Grey background */
+    height: 28px; /* Specified height */
+    background: #696969; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
+    border: 1px solid #1d1d1d;
+    box-sizing: border-box;
 }
 
 /* Mouse-over effects */
@@ -309,24 +306,42 @@ footer {
     opacity: 1; /* Fully shown on mouse-over */
 }
 
+
 /* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */ 
 .slider-range::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: $darkblue; /* Green background */
+    width: 28px; /* Set a specific slider handle width */
+    height: 28px; /* Slider handle height */
+    background: #282828; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 3px;
 }
 
 .slider-range::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: $darkblue; /* Green background */
+    width: 28px; /* Set a specific slider handle width */
+    height: 28px; /* Slider handle height */
+    background: #282828; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 3px;
 }
 
+
+
+
+.slider-val {
+  color: #ffffff;
+  background-color: #212121;
+  height: 28px;
+  width: 28px;
+  float: left;
+  padding-top: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+  border-radius: 3px;
+  text-align: center;
+  // font-weight: bold;
+  margin-right: 3px;
+}
 
 

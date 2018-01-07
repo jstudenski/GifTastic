@@ -1,23 +1,23 @@
 body {
-  background-color: #ababab; }
+  background-color: #ababab;
+  font-family: Arial, Helvetica, sans-serif; }
+
+label {
+  color: #ababab;
+  font-size: 14px; }
 
 header {
-  color: white;
   position: fixed;
   top: 0;
   width: 100%;
   height: 80px;
-  padding-left: 256px;
+  padding-left: 281px;
+  padding-top: 25px;
   box-sizing: border-box;
-  background-color: #282828; }
-
-#content {
-  width: 750px;
-  height: 100%;
-  position: absolute;
-  left: 256px;
-  top: 80px;
-  background-color: salmon; }
+  background-color: #282828;
+  color: #ababab;
+  text-transform: uppercase;
+  font-size: 36px; }
 
 :focus {
   outline: 0; }
@@ -44,9 +44,10 @@ header {
   width: 100%;
   background-color: #282828;
   border-bottom: 1px solid #1b1b1b;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  display: flex; }
   .sidebar1:hover {
-    background-color: #424242; }
+    background-color: #2e2e2e; }
 
 .sidebar2 {
   height: 80px;
@@ -55,12 +56,20 @@ header {
   background-color: #353535;
   border-bottom: 1px solid #1b1b1b; }
   .sidebar2:hover {
-    background-color: #424242; }
+    background-color: #3b3b3b; }
 
 .sidebar3 {
   height: 100%;
   width: 100%;
   background-color: lightblue; }
+
+#content {
+  width: 750px;
+  height: 100%;
+  position: absolute;
+  left: 256px;
+  top: 80px;
+  background-color: salmon; }
 
 .row {
   height: 100px; }
@@ -78,8 +87,11 @@ footer {
   float: left;
   position: relative; }
 
-#add-button {
-  background: #515558;
+#btn-form {
+  margin: 14px auto; }
+
+#plus-button {
+  background: #484848;
   font-size: 22px;
   color: #ffffff;
   height: 28px;
@@ -88,7 +100,7 @@ footer {
   border: none;
   border-radius: 3px;
   vertical-align: top; }
-  #add-button:hover {
+  #plus-button:hover {
     background: #d73a49; }
 
 #btns {
@@ -169,9 +181,9 @@ footer {
   /* Override default CSS styles */
   border-radius: 3px;
   appearance: none;
-  height: 25px;
+  height: 28px;
   /* Specified height */
-  background: #3e4448;
+  background: #696969;
   /* Grey background */
   outline: none;
   /* Remove outline */
@@ -179,7 +191,9 @@ footer {
   /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s;
   /* 0.2 seconds transition on hover */
-  transition: opacity .2s; }
+  transition: opacity .2s;
+  border: 1px solid #1d1d1d;
+  box-sizing: border-box; }
 
 /* Mouse-over effects */
 .slider-range:hover {
@@ -191,25 +205,38 @@ footer {
   -webkit-appearance: none;
   /* Override default look */
   appearance: none;
-  width: 25px;
+  width: 28px;
   /* Set a specific slider handle width */
-  height: 25px;
+  height: 28px;
   /* Slider handle height */
-  background: #666;
+  background: #282828;
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
   border-radius: 3px; }
 
 .slider-range::-moz-range-thumb {
-  width: 25px;
+  width: 28px;
   /* Set a specific slider handle width */
-  height: 25px;
+  height: 28px;
   /* Slider handle height */
-  background: #666;
+  background: #282828;
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
   border-radius: 3px; }
+
+.slider-val {
+  color: #ffffff;
+  background-color: #212121;
+  height: 28px;
+  width: 28px;
+  float: left;
+  padding-top: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+  border-radius: 3px;
+  text-align: center;
+  margin-right: 3px; }
 
 /*# sourceMappingURL=style.css.map */

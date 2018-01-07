@@ -3,9 +3,9 @@ window.onload = function() {
 var animals = ["Cat", "Dog", "Fish", "Flamingo", "Fish", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo"];
 
 
-$("#add-button").on("click", function(event) {
+$("#plus-button").on("click", function(event) {
   event.preventDefault(); // stop page refresh
-  var newAnimal = $("#btn-input").val().trim();
+  var newAnimal = $("#btn-input").val().trim().toLowerCase();
   if (newAnimal !== '') { // if input is not empty
     animals.push(newAnimal);
     genBtns(); // re-generate buttons
@@ -42,11 +42,19 @@ function genBtns() { // clear div
 
 function ajaxRequest() {
 
+  
+
+
+
   $('.item-btn').removeClass("active");
   $(this).addClass("active");
 
 
   var animal = $(this).attr("data-name");
+
+  $('#header').text(animal);
+
+
   var limit = numberofGifs;
   var apikey = 'dc6zaTOxFJmzC'
 
@@ -115,8 +123,6 @@ function animate() {
 
 
 genBtns();
-
-
 
 
 
