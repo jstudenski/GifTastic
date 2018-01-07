@@ -12,27 +12,43 @@ body {
   z-index: 1; }
 
 .section1 {
-  height: 100px;
+  height: 80px;
   width: 100%;
-  background-color: #191f20; }
+  background-color: #1b1b1b; }
 
 .section2 {
   height: 80px;
   width: 100%;
-  background-color: #2e3334;
-  border-bottom: 1px solid #182021;
+  background-color: #363636;
+  border-bottom: 1px solid #1b1b1b;
   box-sizing: border-box; }
+  .section2:hover {
+    background-color: salmon; }
 
 .section3 {
   height: 80px;
   width: 100%;
-  background-color: #2e3334;
-  border-bottom: 1px solid #182021; }
+  box-sizing: border-box;
+  background-color: #363636;
+  border-bottom: 1px solid #1b1b1b; }
+  .section3:hover {
+    background-color: salmon; }
 
 .section4 {
   height: 100%;
   width: 100%;
   background-color: lightblue; }
+
+.sticky {
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  padding-left: 256px;
+  box-sizing: border-box;
+  background-color: #363636;
+  border-bottom: 2px solid #182021; }
 
 .row {
   height: 100px; }
