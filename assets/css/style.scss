@@ -1,29 +1,12 @@
 
 
-
-
-$formbg: rgba(255,255,255,0.75);
-$gifbg: #9e9e9e;
-// #eeeeee
-// #dddddd
-// #cdcdcd
-
-$gray: #555555;
-$steel: #515558;
-$btn-input: #3f4448;
-$slider-bg: #3e4448;
-
-$darkblue: #666; // #24292e
-
-// new colors
 $red: #d73a49;
 $night: #1b1b1b;
 $dark: #282828;
 
-$white: #ffffff;
-
+$gray: #555555;
 $light: #ababab;
-
+$white: #ffffff;
 
 $sidebar-width: 256px;
 $header-height: 80px;
@@ -74,8 +57,8 @@ header {
   box-sizing: border-box;
   height: $header-height;
   width: 100%;
-  background-color: #1b1b1b;
-  color: #ffffff;
+  background-color: $night;
+  color: $white;
   font-family: 'Sedgwick Ave Display', cursive;
 }
 
@@ -144,7 +127,7 @@ header {
 
 
 #plus-button {
-  background: #484848;
+  background: $gray;
   font-size: 22px;
   color: $white;
   height: 28px;
@@ -158,34 +141,6 @@ header {
   }
 }
 
-
-
-/* all arrows */
-// #btn-form:after, #btns:after {
-//   content: '';
-//   display: block;  
-//   position: absolute;
-//   width: 0;
-//   height: 0;
-//   border: 10px solid transparent;
-//   z-index: 1;
-// }
-
-// /* right arrow */
-// #btn-form:after {
-//   left: 100%;
-//   top: 50%;
-//   margin-top: -10px;
-//   border-left: 10px solid $darkblue;
-// }
-
-/* down arrow */
-// #btns:after {
-//   left: 50%;
-//   top: 100%;
-//   margin-left: -10px;
-//   border-top: 10px solid $red;
-// }
 
 
 .item p {
@@ -233,22 +188,14 @@ header {
 #btn-input {
   @include button;
   width: 150px;
-  &:focus {
-    // background-color: $steel;
-  }
 }
-
-
-
-
-
 
 
 #gif-area {
   display: flex;
   flex-flow: column wrap;
   width: 700px;
-  background-color: $gifbg;
+  background-color: $light;
   max-height: 800px;
 }
 
@@ -269,63 +216,46 @@ header {
 }
 
 
-
-// .remove{
-//   width: 20px;
-//   height: 20px;
-//   background-color: red;
-// }
-
-
-
 /* The slider itself */
 .slider-range {
-    width: 150px;
-    margin: 0;
-    -webkit-appearance: none;  /* Override default CSS styles */
-    border-radius: 3px;
-    appearance: none;
-    height: 28px; /* Specified height */
-    background: #696969; /* Grey background */
-    outline: none; /* Remove outline */
-    // opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    //-webkit-transition: .2s;
-    // transition: opacity .2s;
-    border: 1px solid #1d1d1d;
-    box-sizing: border-box;
-}
-
-/* Mouse-over effects */
-.slider-range:hover {
-    opacity: 1; /* Fully shown on mouse-over */
+  width: 150px;
+  margin: 0;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  appearance: none;
+  height: 28px;
+  background: $gray;
+  outline: none;
+  border: 1px solid $night;
+  box-sizing: border-box;
 }
 
 
 /* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */ 
 .slider-range::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 28px; /* Set a specific slider handle width */
-    height: 28px; /* Slider handle height */
-    background: #282828; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 3px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px; 
+  height: 28px;
+  background: $dark;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 .slider-range::-moz-range-thumb {
-    width: 28px; /* Set a specific slider handle width */
-    height: 28px; /* Slider handle height */
-    background: #282828; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 3px;
+  width: 28px;
+  height: 28px;
+  background: $dark;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 
 
 
 .slider-val {
-  color: #ffffff;
-  background-color: #282828;
+  color: $white;
+  background-color: $dark;
   height: 28px;
   width: 28px;
   float: right;
@@ -334,8 +264,6 @@ header {
   font-size: 15px;
   border-radius: 3px;
   text-align: center;
-  // font-weight: bold;
-  // margin-right: 3px;
 }
 
 #x{ 
@@ -348,7 +276,7 @@ header {
 
 #x {
   position: relative;
-  background: #484848;
+  background: $gray;
   font-size: 10px;
   color: white;
   top: -27px;

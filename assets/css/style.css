@@ -92,7 +92,7 @@ header {
   margin: 0px auto; }
 
 #plus-button {
-  background: #484848;
+  background: #555555;
   font-size: 22px;
   color: #ffffff;
   height: 28px;
@@ -104,8 +104,6 @@ header {
   #plus-button:hover {
     background: #d73a49; }
 
-/* all arrows */
-/* down arrow */
 .item p {
   background-color: #ffffff;
   width: 30px;
@@ -152,7 +150,7 @@ header {
   display: flex;
   flex-flow: column wrap;
   width: 700px;
-  background-color: #9e9e9e;
+  background-color: #ababab;
   max-height: 800px; }
 
 .item {
@@ -173,47 +171,29 @@ header {
   width: 150px;
   margin: 0;
   -webkit-appearance: none;
-  /* Override default CSS styles */
   border-radius: 3px;
   appearance: none;
   height: 28px;
-  /* Specified height */
-  background: #696969;
-  /* Grey background */
+  background: #555555;
   outline: none;
-  /* Remove outline */
-  border: 1px solid #1d1d1d;
+  border: 1px solid #1b1b1b;
   box-sizing: border-box; }
-
-/* Mouse-over effects */
-.slider-range:hover {
-  opacity: 1;
-  /* Fully shown on mouse-over */ }
 
 /* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */
 .slider-range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  /* Override default look */
   appearance: none;
   width: 28px;
-  /* Set a specific slider handle width */
   height: 28px;
-  /* Slider handle height */
   background: #282828;
-  /* Green background */
   cursor: pointer;
-  /* Cursor on hover */
   border-radius: 3px; }
 
 .slider-range::-moz-range-thumb {
   width: 28px;
-  /* Set a specific slider handle width */
   height: 28px;
-  /* Slider handle height */
   background: #282828;
-  /* Green background */
   cursor: pointer;
-  /* Cursor on hover */
   border-radius: 3px; }
 
 .slider-val {
@@ -236,7 +216,7 @@ header {
 
 #x {
   position: relative;
-  background: #484848;
+  background: #555555;
   font-size: 10px;
   color: white;
   top: -27px;
