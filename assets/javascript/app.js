@@ -157,7 +157,7 @@ function animate() {
 
 var numberofGifs = 10;
 
-var rangeSlider = function(){
+function rangeSlider() {
   var slider = $('.slider'),
       range = $('.slider-range'),
       value = $('.slider-value');
