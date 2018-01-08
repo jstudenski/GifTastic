@@ -228,4 +228,12 @@ header {
   border-radius: 3px;
   text-align: center; }
 
+#x {
+  position: relative;
+  float: right;
+  background: red;
+  color: white;
+  top: -10px;
+  right: -10px; }
+
 /*# sourceMappingURL=style.css.map */

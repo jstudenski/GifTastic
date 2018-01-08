@@ -1,13 +1,12 @@
 window.onload = function() {
 
-var animals = ["Cat", "Dog", "Fish", "Flamingo", "Fish", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo", "Cat", "Dog", "Fish", "Flamingo"];
+var animals = ["Cat", "Dog"];
 
 
 // generate initial buttons
 $.each(animals, function( index, value ) {
   addBtn(value);
 });
-
 
 
 $("#plus-button").on("click", function(event) {
@@ -26,17 +25,31 @@ function addBtn(name){
   btn.attr("data-name", name);
   btn.text(name);
   btn.click(ajaxRequest);
-  // btn.append('<div class="remove">X</div>'); // .click(removeButton);
+
+  var rmv = $("<div>");
+  rmv.attr("id","x");
+  rmv.attr("parent-name", name);
+  rmv.text("x");
+  rmv.click(removeButton);
+  btn.append(rmv);
+  //$("button").attr("id","testid");
   $("#btns").append(btn);
 }
 
-
-
-
-
 function removeButton() {
-  console.log("REMOVE ME!");
-  console.log(this);
+  var test = $(this).attr("parent-name");
+  var index = animals.indexOf(test);
+
+  for(var i = animals.length - 1; i >= 0; i--) {
+    if(animals[i] === test) {
+      animals.splice(i, 1);
+    }
+  }
+
+  console.log(test);
+  console.log(index);
+  console.log(animals);
+  $("[data-name='"+test+"']").remove();
 }
 
 
@@ -139,11 +152,6 @@ function animate() {
   }
 }
 
-
-
-
-
-genBtns();
 
 
 
