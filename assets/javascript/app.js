@@ -1,7 +1,7 @@
 window.onload = function() {
 
 
-var items = ["Cat", "Dog"];
+var items = ["Kanye West", "Jay-Z", "Tupac", "Biggie"];
 
 // generate initial buttons
 $.each(items, function( index, value ) {
