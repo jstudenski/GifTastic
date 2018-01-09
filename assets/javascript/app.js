@@ -1,26 +1,20 @@
 window.onload = function() {
 
 
-
-
-
-
-var animals = ["Cat", "Dog"];
-
+var items = ["Cat", "Dog"];
 
 // generate initial buttons
-$.each(animals, function( index, value ) {
+$.each(items, function( index, value ) {
   addBtn(value);
 });
 
-
 $("#plus-button").on("click", function(event) {
-  event.preventDefault(); // stop page refresh
-  var newAnimal = $("#btn-input").val().trim().toLowerCase();
-  if (newAnimal !== '') { // if input is not empty
-    animals.push(newAnimal);
-    $("#btn-input").val(''); // clear input
-    addBtn(newAnimal);
+  event.preventDefault();
+  var newItem = $("#btn-input").val().trim().toLowerCase();
+  if (newItem !== '') {
+    items.push(newItem);
+    $("#btn-input").val('');
+    addBtn(newItem);
   }
 });
 
@@ -37,45 +31,38 @@ function addBtn(name){
   rmv.text("x");
   rmv.click(removeButton);
   btn.append(rmv);
-  //$("button").attr("id","testid");
+
   $("#btns").append(btn);
 }
 
 function removeButton() {
   var test = $(this).attr("parent-name");
-  var index = animals.indexOf(test);
+  var index = items.indexOf(test);
 
-  for(var i = animals.length - 1; i >= 0; i--) {
-    if(animals[i] === test) {
-      animals.splice(i, 1);
+  for(var i = items.length - 1; i >= 0; i--) {
+    if(items[i] === test) {
+      items.splice(i, 1);
     }
   }
 
-  console.log(test);
-  console.log(index);
-  console.log(animals);
+
   $("[data-name='"+test+"']").remove();
 }
 
 
 function ajaxRequest() {
 
-
-
   $('.item-btn').removeClass("active");
   $(this).addClass("active");
+  var item = $(this).attr("data-name");
 
-
-  var animal = $(this).attr("data-name");
-
-  $('#header').text(animal);
-
+  $('#header').text(item);
 
   var limit = numberofGifs;
   var apikey = 'dc6zaTOxFJmzC'
 
   var queryURL = "https://api.giphy.com/v1/gifs/search"
-    + "?q=" + animal 
+    + "?q=" + item 
     + "&limit=" + limit
     + "&api_key=" + apikey;
 
@@ -90,31 +77,26 @@ function ajaxRequest() {
 
     for (var i = 0; i < results.length; i++) {
 
-      // Only taking action if the photo has an appropriate rating
       if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
 
-        var rating = results[i].rating;
-        var p = $("<p>").text(rating);
+        var p = $("<p>").text(results[i].rating);
 
-        // console.log(results[i])
-
-        var animalGif = $("<img>");
-        animalGif.attr({
+        var itemGif = $("<img>");
+        itemGif.attr({
           'data-state': 'still',
           src: results[i].images.fixed_width_still.url,
           'data-still': results[i].images.fixed_width_still.url,
           'data-animate': results[i].images.fixed_width.url
         }).click(animate);
       
-        var gifDiv = $("<div class='grid-item'>");
-        gifDiv.append(animalGif);
+        var gifDiv = $("<div>")
+        gifDiv.addClass('grid-item');
+        gifDiv.append(itemGif);
         gifDiv.append(p);
         $("#gif-area").prepend(gifDiv);
 
-               // init Masonry after all images have loaded
+        // init Masonry after all images have loaded
         var $grid = $('.grid').imagesLoaded( function() {
-          console.log("HELLO");
-            //$grid.masonry('reloadItems')
           $('.grid').masonry({
             itemSelector: '.grid-item',
             percentPosition: true,
@@ -123,53 +105,11 @@ function ajaxRequest() {
           $grid.masonry('reloadItems')
         });
 
-
       }
-
-
-
     }
-
-
-
-  });
-
+  }); // ajax request
 };
 
-
-
-$('.logo').click(function() {
-
-  var $grid = $('.grid').imagesLoaded( function() {
-  //   console.log("HELLO");
-  $grid.masonry('reloadItems')
-  //   $('.grid').masonry({
-  //     itemSelector: '.grid-item',
-  //     percentPosition: true,
-  //     columnWidth: '.grid-sizer'
-  //   }); 
-  });
-});
-
-
-
-// // init Masonry after all images have loaded
-// var $grid = $('.grid').imagesLoaded( function() {
-//   $grid.masonry({
-//     itemSelector: '.grid-item',
-//     percentPosition: true,
-//     columnWidth: '.grid-sizer'
-//   }); 
-// });
-
-
-
-
-
-$('.testButton').click(function() {
-  //console.log("hello");
-  console.log($(this).attr("data-attribute"));
-});
 
 function animate() {
   var state = $(this).attr("data-state");

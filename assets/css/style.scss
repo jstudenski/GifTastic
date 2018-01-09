@@ -12,6 +12,17 @@ $white: #ffffff;
 $sidebar-width: 256px;
 $header-height: 80px;
 
+// mixins
+@mixin box-shadow($color) {
+  box-shadow: 1px 1px $color, 2px 2px $color;
+  -webkit-box-shadow: 1px 1px $color, 2px 2px $color;
+  -moz-box-shadow: 1px 1px $color, 2px 2px $color;
+}
+
+
+
+
+
 * { box-sizing: border-box; }
 html { overflow-y: scroll; }
 :focus { outline: 0; }
@@ -45,6 +56,8 @@ body {
   img {
     display: block;
     width: 100%;
+    border-radius: 7px 7px 0px 0px;
+    @include box-shadow(lighten($gray, 10%));
   }
   p {
     text-align: center;
@@ -53,13 +66,14 @@ body {
     font-size: 14px;
     color: $dark;
     border-radius: 0px 0px 7px 7px;
+    @include box-shadow(lighten($gray, 10%));
   }
-  [data-state="animate"]{
-    border: 2px solid $red;
+  [data-state="animate"] {
+    border-color: $red;
+    border-style: solid;
+    border-width: 2px;
   }
 }
-
-
 
 
 label {
@@ -77,10 +91,14 @@ header {
   padding-left: $sidebar-width + 25px;
   padding-top: 25px;
   background-color: $dark;
+  @include box-shadow(lighten($dark, 10%));
+
   // Text Properties
-  color: $light;
+  color: $light2;
   text-transform: uppercase;
   font-size: 36px;
+  text-shadow: 1px 1px $gray, 2px 2px $gray;
+  
 }
 
 
@@ -103,6 +121,7 @@ header {
   background-color: $night;
   color: $white;
   font-family: 'Sedgwick Ave Display', cursive;
+  text-shadow: 1px 1px $medgray2, 2px 2px $medgray2;
 }
 
 .sidebar1 {
@@ -112,6 +131,7 @@ header {
   background-color: $dark;
   border-bottom: 1px solid $night;
   display: flex;
+  @include box-shadow(darken($dark, 10%));
   &:hover {
     background-color: $dark2;
   }
@@ -122,6 +142,7 @@ header {
   padding-top: 14px;
   background-color: $medgray;
   border-bottom: 1px solid $night;
+  @include box-shadow(darken($medgray, 10%));
   &:hover {
     background-color: $medgray2;
   }
@@ -129,7 +150,7 @@ header {
 .sidebar3 {
   height: 100%;
   width: 100%;
-  background-color: lightblue;
+  @include box-shadow(darken($red, 10%));
 }
 
 #content {
