@@ -1,5 +1,10 @@
 window.onload = function() {
 
+
+
+
+
+
 var animals = ["Cat", "Dog"];
 
 
@@ -53,30 +58,7 @@ function removeButton() {
 }
 
 
-
-// function genBtns() { // clear div
-//   console.log(animals);
-
-//   $("#btns").empty();
-//   for (var i = 0; i < animals.length; i++) {
-//     var btn = $("<button>");
-//     btn.addClass("item-btn");
-//     btn.attr("data-name", animals[i]);
-//     btn.text(animals[i]);
-//     btn.click(ajaxRequest);
-//     // btn.append('<div class="remove">X</div>'); // .click(removeButton);
-//     $("#btns").append(btn);
-
-//   }
-
-//   $(".remove").click(removeButton);
-// }
-
-
-
 function ajaxRequest() {
-
-  
 
 
 
@@ -123,17 +105,64 @@ function ajaxRequest() {
           'data-still': results[i].images.fixed_width_still.url,
           'data-animate': results[i].images.fixed_width.url
         }).click(animate);
-
-        var gifDiv = $("<div class='item'>");
+      
+        var gifDiv = $("<div class='grid-item'>");
         gifDiv.append(animalGif);
         gifDiv.append(p);
-
-
         $("#gif-area").prepend(gifDiv);
+
+               // init Masonry after all images have loaded
+        var $grid = $('.grid').imagesLoaded( function() {
+          console.log("HELLO");
+            $grid.masonry('reloadItems')
+          $('.grid').masonry({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            columnWidth: '.grid-sizer'
+          }); 
+        });
+
+
       }
+
+
+
     }
+
+
+
   });
+
 };
+
+
+
+$('.logo').click(function() {
+
+  var $grid = $('.grid').imagesLoaded( function() {
+  //   console.log("HELLO");
+  $grid.masonry('reloadItems')
+  //   $('.grid').masonry({
+  //     itemSelector: '.grid-item',
+  //     percentPosition: true,
+  //     columnWidth: '.grid-sizer'
+  //   }); 
+  });
+});
+
+
+
+// // init Masonry after all images have loaded
+// var $grid = $('.grid').imagesLoaded( function() {
+//   $grid.masonry({
+//     itemSelector: '.grid-item',
+//     percentPosition: true,
+//     columnWidth: '.grid-sizer'
+//   }); 
+// });
+
+
+
 
 
 $('.testButton').click(function() {

@@ -1,15 +1,62 @@
-
-
 $red: #d73a49;
 $night: #1b1b1b;
 $dark: #282828;
-
+$dark2: #2e2e2e;
+$medgray: #353535;
+$medgray2:#3b3b3b;
 $gray: #555555;
 $light: #ababab;
 $white: #ffffff;
-
+// Sizes
 $sidebar-width: 256px;
 $header-height: 80px;
+
+
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+// body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  background: #DDD;
+  left: $sidebar-width;
+  top: $header-height;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+  padding: 10px;
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+}
+
+
+
+
+
+
+
 
 body {
   background-color: $light;
@@ -71,7 +118,7 @@ header {
   box-sizing: border-box;
   display: flex;
   &:hover {
-    background-color: #2e2e2e;
+    background-color: $dark2;
   }
 }
 .sidebar2 {
@@ -79,10 +126,10 @@ header {
   width: 100%;
   padding-top: 14px;
   box-sizing: border-box;
-  background-color: #353535;
+  background-color: $medgray;
   border-bottom: 1px solid $night;
   &:hover {
-    background-color: #3b3b3b;
+    background-color: $medgray2;
   }
 }
 .sidebar3 {
@@ -99,7 +146,6 @@ header {
   top: $header-height;
   background-color: salmon;
 }
-
 
 
 .row {
@@ -191,13 +237,13 @@ header {
 }
 
 
-#gif-area {
-  display: flex;
-  flex-flow: column wrap;
-  width: 700px;
-  background-color: $light;
-  max-height: 800px;
-}
+// #gif-area {
+//   display: flex;
+//   flex-flow: column wrap;
+//   width: 700px;
+//   background-color: $light;
+//   max-height: 800px;
+// }
 
 .item {
   width: 220px;

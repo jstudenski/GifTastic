@@ -1,3 +1,35 @@
+* {
+  box-sizing: border-box; }
+
+/* force scrollbar */
+html {
+  overflow-y: scroll; }
+
+/* ---- grid ---- */
+.grid {
+  background: #DDD;
+  left: 256px;
+  top: 80px; }
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+/* ---- .grid-item ---- */
+.grid-sizer,
+.grid-item {
+  width: 33.333%; }
+
+.grid-item {
+  float: left;
+  padding: 10px; }
+
+.grid-item img {
+  display: block;
+  width: 100%; }
+
 body {
   background-color: #ababab;
   font-family: Arial, Helvetica, sans-serif; }
@@ -145,13 +177,6 @@ header {
   font: 11px;
   font-family: Arial, Helvetica, sans-serif;
   width: 150px; }
-
-#gif-area {
-  display: flex;
-  flex-flow: column wrap;
-  width: 700px;
-  background-color: #ababab;
-  max-height: 800px; }
 
 .item {
   width: 220px;
