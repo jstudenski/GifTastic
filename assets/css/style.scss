@@ -6,35 +6,33 @@ $medgray: #353535;
 $medgray2:#3b3b3b;
 $gray: #555555;
 $light: #ababab;
+$light2: #e6e5e5;
 $white: #ffffff;
 // Sizes
 $sidebar-width: 256px;
 $header-height: 80px;
 
-
 * { box-sizing: border-box; }
-
-/* force scrollbar */
 html { overflow-y: scroll; }
+:focus { outline: 0; }
+body {
+  background-color: $light;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-// body { font-family: sans-serif; }
 
-/* ---- grid ---- */
 
 .grid {
-  background: #DDD;
   left: $sidebar-width;
   top: $header-height;
+  width: 750px;
+  margin: 10px;
+  // :after {
+  //   content: '';
+  //   display: block;
+  //   clear: both;
+  // }
 }
-
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-/* ---- .grid-item ---- */
 
 .grid-sizer,
 .grid-item {
@@ -44,24 +42,25 @@ html { overflow-y: scroll; }
 .grid-item {
   float: left;
   padding: 10px;
+  img {
+    display: block;
+    width: 100%;
+  }
+  p {
+    text-align: center;
+    background-color: $light2;
+    padding-bottom: 4px;
+    font-size: 14px;
+    color: $dark;
+    border-radius: 0px 0px 7px 7px;
+  }
+  [data-state="animate"]{
+    border: 2px solid $red;
+  }
 }
 
-.grid-item img {
-  display: block;
-  width: 100%;
-}
 
 
-
-
-
-
-
-
-body {
-  background-color: $light;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 label {
   color: $light;
@@ -77,7 +76,6 @@ header {
   height: $header-height;
   padding-left: $sidebar-width + 25px;
   padding-top: 25px;
-  box-sizing: border-box;
   background-color: $dark;
   // Text Properties
   color: $light;
@@ -85,15 +83,14 @@ header {
   font-size: 36px;
 }
 
-:focus {
-  outline: 0;
-}
+
 
 .sidebar {
   width: $sidebar-width;
   height: 100%;
   position: fixed;
   z-index: 1;
+  top: 0;
 }
 
 
@@ -101,7 +98,6 @@ header {
   padding-top: 26px;
   font-size: 45px;
   text-align: center;
-  box-sizing: border-box;
   height: $header-height;
   width: 100%;
   background-color: $night;
@@ -115,7 +111,6 @@ header {
   padding-top: 14px;
   background-color: $dark;
   border-bottom: 1px solid $night;
-  box-sizing: border-box;
   display: flex;
   &:hover {
     background-color: $dark2;
@@ -125,7 +120,6 @@ header {
   height: 80px;
   width: 100%;
   padding-top: 14px;
-  box-sizing: border-box;
   background-color: $medgray;
   border-bottom: 1px solid $night;
   &:hover {
@@ -195,7 +189,6 @@ header {
   height: 23px;
   border: 1px solid black;
   border-radius: 8px;
-  box-sizing: border-box;
   text-align: center;
 }
 
@@ -211,7 +204,6 @@ header {
   border: 1px solid $dark;
   height: 28px;
   padding: 8px 10px;
-  box-sizing: border-box;
   font: 11px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -237,30 +229,6 @@ header {
 }
 
 
-// #gif-area {
-//   display: flex;
-//   flex-flow: column wrap;
-//   width: 700px;
-//   background-color: $light;
-//   max-height: 800px;
-// }
-
-.item {
-  width: 220px;
-  background-color: $white;
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 0 8px 8px 0;
-}
-
-.item:hover {
-  opacity: .5;
-}
-
-.item [data-state="animate"]{
-  border: 2px solid $red;
-}
-
 
 /* The slider itself */
 .slider-range {
@@ -273,7 +241,6 @@ header {
   background: $gray;
   outline: none;
   border: 1px solid $night;
-  box-sizing: border-box;
 }
 
 
@@ -306,7 +273,6 @@ header {
   width: 28px;
   float: right;
   padding-top: 6px;
-  box-sizing: border-box;
   font-size: 15px;
   border-radius: 3px;
   text-align: center;
@@ -328,7 +294,6 @@ header {
   top: -27px;
   right: 17px;
   padding-top: 1px;
-  box-sizing: border-box;
   height: 14px;
   width: 14px;
   border-radius: 7px;

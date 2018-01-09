@@ -1,23 +1,22 @@
 * {
   box-sizing: border-box; }
 
-/* force scrollbar */
 html {
   overflow-y: scroll; }
 
-/* ---- grid ---- */
+:focus {
+  outline: 0; }
+
+body {
+  background-color: #ababab;
+  font-family: Arial, Helvetica, sans-serif; }
+
 .grid {
-  background: #DDD;
   left: 256px;
-  top: 80px; }
+  top: 80px;
+  width: 750px;
+  margin: 10px; }
 
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both; }
-
-/* ---- .grid-item ---- */
 .grid-sizer,
 .grid-item {
   width: 33.333%; }
@@ -25,14 +24,18 @@ html {
 .grid-item {
   float: left;
   padding: 10px; }
-
-.grid-item img {
-  display: block;
-  width: 100%; }
-
-body {
-  background-color: #ababab;
-  font-family: Arial, Helvetica, sans-serif; }
+  .grid-item img {
+    display: block;
+    width: 100%; }
+  .grid-item p {
+    text-align: center;
+    background-color: #e6e5e5;
+    padding-bottom: 4px;
+    font-size: 14px;
+    color: #282828;
+    border-radius: 0px 0px 7px 7px; }
+  .grid-item [data-state="animate"] {
+    border: 2px solid #d73a49; }
 
 label {
   color: #ababab;
@@ -46,26 +49,22 @@ header {
   height: 80px;
   padding-left: 281px;
   padding-top: 25px;
-  box-sizing: border-box;
   background-color: #282828;
   color: #ababab;
   text-transform: uppercase;
   font-size: 36px; }
 
-:focus {
-  outline: 0; }
-
 .sidebar {
   width: 256px;
   height: 100%;
   position: fixed;
-  z-index: 1; }
+  z-index: 1;
+  top: 0; }
 
 .logo {
   padding-top: 26px;
   font-size: 45px;
   text-align: center;
-  box-sizing: border-box;
   height: 80px;
   width: 100%;
   background-color: #1b1b1b;
@@ -78,7 +77,6 @@ header {
   padding-top: 14px;
   background-color: #282828;
   border-bottom: 1px solid #1b1b1b;
-  box-sizing: border-box;
   display: flex; }
   .sidebar1:hover {
     background-color: #2e2e2e; }
@@ -87,7 +85,6 @@ header {
   height: 80px;
   width: 100%;
   padding-top: 14px;
-  box-sizing: border-box;
   background-color: #353535;
   border-bottom: 1px solid #1b1b1b; }
   .sidebar2:hover {
@@ -142,7 +139,6 @@ header {
   height: 23px;
   border: 1px solid black;
   border-radius: 8px;
-  box-sizing: border-box;
   text-align: center; }
 
 .item-btn {
@@ -153,7 +149,6 @@ header {
   border: 1px solid #282828;
   height: 28px;
   padding: 8px 10px;
-  box-sizing: border-box;
   font: 11px;
   font-family: Arial, Helvetica, sans-serif;
   margin: 5px; }
@@ -173,23 +168,9 @@ header {
   border: 1px solid #282828;
   height: 28px;
   padding: 8px 10px;
-  box-sizing: border-box;
   font: 11px;
   font-family: Arial, Helvetica, sans-serif;
   width: 150px; }
-
-.item {
-  width: 220px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 0 8px 8px 0; }
-
-.item:hover {
-  opacity: .5; }
-
-.item [data-state="animate"] {
-  border: 2px solid #d73a49; }
 
 /* The slider itself */
 .slider-range {
@@ -201,8 +182,7 @@ header {
   height: 28px;
   background: #555555;
   outline: none;
-  border: 1px solid #1b1b1b;
-  box-sizing: border-box; }
+  border: 1px solid #1b1b1b; }
 
 /* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */
 .slider-range::-webkit-slider-thumb {
@@ -228,7 +208,6 @@ header {
   width: 28px;
   float: right;
   padding-top: 6px;
-  box-sizing: border-box;
   font-size: 15px;
   border-radius: 3px;
   text-align: center; }
@@ -247,7 +226,6 @@ header {
   top: -27px;
   right: 17px;
   padding-top: 1px;
-  box-sizing: border-box;
   height: 14px;
   width: 14px;
   border-radius: 7px; }

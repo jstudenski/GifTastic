@@ -114,12 +114,13 @@ function ajaxRequest() {
                // init Masonry after all images have loaded
         var $grid = $('.grid').imagesLoaded( function() {
           console.log("HELLO");
-            $grid.masonry('reloadItems')
+            //$grid.masonry('reloadItems')
           $('.grid').masonry({
             itemSelector: '.grid-item',
             percentPosition: true,
             columnWidth: '.grid-sizer'
           }); 
+          $grid.masonry('reloadItems')
         });
 
 
