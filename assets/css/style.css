@@ -182,6 +182,24 @@ header {
   background-color: #282828;
   color: #ffffff; }
 
+#x {
+  display: none; }
+
+.item-btn:hover #x {
+  display: block; }
+
+#x {
+  position: relative;
+  background: #555555;
+  font-size: 10px;
+  color: white;
+  top: -27px;
+  right: 17px;
+  padding-top: 1px;
+  height: 14px;
+  width: 14px;
+  border-radius: 7px; }
+
 #btn-input {
   border-radius: 4px;
   background-color: #ffffff;
@@ -194,7 +212,6 @@ header {
   font-family: Arial, Helvetica, sans-serif;
   width: 150px; }
 
-/* The slider itself */
 .slider-range {
   width: 150px;
   margin: 0;
@@ -206,7 +223,6 @@ header {
   outline: none;
   border: 1px solid #1b1b1b; }
 
-/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */
 .slider-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -233,23 +249,5 @@ header {
   font-size: 15px;
   border-radius: 3px;
   text-align: center; }
-
-#x {
-  display: none; }
-
-.item-btn:hover #x {
-  display: block; }
-
-#x {
-  position: relative;
-  background: #555555;
-  font-size: 10px;
-  color: white;
-  top: -27px;
-  right: 17px;
-  padding-top: 1px;
-  height: 14px;
-  width: 14px;
-  border-radius: 7px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -81,7 +81,6 @@ label {
   font-size: 14px;
 }
 
-
 header {
   z-index: 1;
   position: fixed;
@@ -101,8 +100,6 @@ header {
   
 }
 
-
-
 .sidebar {
   width: $sidebar-width;
   height: 100%;
@@ -110,7 +107,6 @@ header {
   z-index: 1;
   top: 0;
 }
-
 
 .logo {
   padding-top: 26px;
@@ -162,11 +158,9 @@ header {
   background-color: salmon;
 }
 
-
 .row {
   height: 100px;
 }
-
 
 #btns {
   padding: 16px;
@@ -176,7 +170,6 @@ header {
   min-height: 100%;
 }
 
-
 #btn-form {
   margin: 0px auto;
 }
@@ -185,7 +178,6 @@ header {
   width: 182px;
   margin: 0px auto;
 }
-
 
 #plus-button {
   background: $gray;
@@ -203,7 +195,6 @@ header {
 }
 
 
-
 .item p {
   background-color: $white;
   width: 30px;
@@ -212,9 +203,6 @@ header {
   border-radius: 8px;
   text-align: center;
 }
-
-
-
 
 
 @mixin button {
@@ -242,6 +230,22 @@ header {
   color: $white;
 }
 
+// show/hide 
+#x{display: none;}
+.item-btn:hover #x{display: block;}
+
+#x {
+  position: relative;
+  background: $gray;
+  font-size: 10px;
+  color: white;
+  top: -27px;
+  right: 17px;
+  padding-top: 1px;
+  height: 14px;
+  width: 14px;
+  border-radius: 7px;
+}
 
 
 #btn-input {
@@ -251,7 +255,6 @@ header {
 
 
 
-/* The slider itself */
 .slider-range {
   width: 150px;
   margin: 0;
@@ -264,8 +267,6 @@ header {
   border: 1px solid $night;
 }
 
-
-/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */ 
 .slider-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -284,9 +285,6 @@ header {
   border-radius: 3px;
 }
 
-
-
-
 .slider-val {
   color: $white;
   background-color: $dark;
@@ -299,23 +297,4 @@ header {
   text-align: center;
 }
 
-#x{ 
-   display: none;
- }
-.item-btn:hover #x{
-   display: block;
- }
 
-
-#x {
-  position: relative;
-  background: $gray;
-  font-size: 10px;
-  color: white;
-  top: -27px;
-  right: 17px;
-  padding-top: 1px;
-  height: 14px;
-  width: 14px;
-  border-radius: 7px;
-}

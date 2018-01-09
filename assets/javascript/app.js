@@ -1,22 +1,7 @@
 window.onload = function() {
 
-
 var items = ["Kanye West", "Jay-Z", "Tupac", "Biggie"];
-
-// generate initial buttons
-$.each(items, function( index, value ) {
-  addBtn(value);
-});
-
-$("#plus-button").on("click", function(event) {
-  event.preventDefault();
-  var newItem = $("#btn-input").val().trim().toLowerCase();
-  if (newItem !== '') {
-    items.push(newItem);
-    $("#btn-input").val('');
-    addBtn(newItem);
-  }
-});
+var numberofGifs = 10;
 
 function addBtn(name){
   var btn = $("<button>");
@@ -38,35 +23,25 @@ function addBtn(name){
 function removeButton() {
   var test = $(this).attr("parent-name");
   var index = items.indexOf(test);
-
   for(var i = items.length - 1; i >= 0; i--) {
     if(items[i] === test) {
       items.splice(i, 1);
     }
   }
-
-
   $("[data-name='"+test+"']").remove();
 }
 
-
 function ajaxRequest() {
-
   $('.item-btn').removeClass("active");
   $(this).addClass("active");
+
   var item = $(this).attr("data-name");
+  var limit = numberofGifs;
+  var apikey = 'dc6zaTOxFJmzC';
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q="+ item +"&limit="+ limit +"&api_key="+ apikey;
 
   $('#header').text(item);
-
-  var limit = numberofGifs;
-  var apikey = 'dc6zaTOxFJmzC'
-
-  var queryURL = "https://api.giphy.com/v1/gifs/search"
-    + "?q=" + item 
-    + "&limit=" + limit
-    + "&api_key=" + apikey;
-
-
+  
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -89,12 +64,11 @@ function ajaxRequest() {
           'data-animate': results[i].images.fixed_width.url
         }).click(animate);
       
-        var gifDiv = $("<div>")
+        var gifDiv = $("<div>");
         gifDiv.addClass('grid-item');
         gifDiv.append(itemGif);
         gifDiv.append(p);
         $("#gif-area").prepend(gifDiv);
-
         // init Masonry after all images have loaded
         var $grid = $('.grid').imagesLoaded( function() {
           $('.grid').masonry({
@@ -102,13 +76,12 @@ function ajaxRequest() {
             percentPosition: true,
             columnWidth: '.grid-sizer'
           }); 
-          $grid.masonry('reloadItems')
+          $grid.masonry('reloadItems');
         });
-
-      }
-    }
-  }); // ajax request
-};
+      } // if appropriate
+    } // for loop
+  }); // ajax
+} // function ajaxRequest
 
 
 function animate() {
@@ -121,11 +94,6 @@ function animate() {
     $(this).attr("data-state", "still");
   }
 }
-
-
-
-
-var numberofGifs = 10;
 
 function rangeSlider() {
   var slider = $('.slider'),
@@ -145,16 +113,23 @@ function rangeSlider() {
       numberofGifs = this.value;
     });
   });
-};
+}
+
+$("#plus-button").on("click", function(event) {
+  event.preventDefault();
+  var newItem = $("#btn-input").val().trim().toLowerCase();
+  if (newItem !== '') {
+    items.push(newItem);
+    $("#btn-input").val('');
+    addBtn(newItem);
+  }
+});
+
+// generate initial buttons
+$.each(items, function( index, value ) {
+  addBtn(value);
+});
 
 rangeSlider();
 
-
-
-
-
-
-
-
-
-} // window.onload
+}; // window.onload
