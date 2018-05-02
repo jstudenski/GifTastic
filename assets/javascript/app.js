@@ -83,7 +83,6 @@ function ajaxRequest() {
   }); // ajax
 } // function ajaxRequest
 
-
 function animate() {
   var state = $(this).attr("data-state");
   if (state === "still") {
